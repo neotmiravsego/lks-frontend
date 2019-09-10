@@ -1,0 +1,39 @@
+body {
+    color: $dark;
+    font-family: Helvetica;
+    background: #fff;
+}
+
+a {
+    color: $dark;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+h2 {
+    margin: 0;
+    font-size: 36px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500px;
+}
+
+.author__txt {
+    font-weight: bold;
+}
