@@ -1,14 +1,35 @@
 <template lang="pug">
   .container
-    vHeader  
+    vHeader
+    breadCrumbs
+    vSectionContent
+    section.other__blogs
+      h3.other__blogs__title Другие блоги
+      ul.other__blogs__list
+        listCard
+        listCard
+        listCard
+        listCard
+        listCard
+        listCard
+    vFooter
+
 </template>
 
 <script>
 import vHeader from '~/components/header.vue'
+import vSectionContent from '~/components/sectionContent.vue'
+import listCard from '~/components/pages/blog/listCard.vue'
+import breadCrumbs from '~/components/pages/blog/breadCrumbs.vue'
+import vFooter from '~/components/footer.vue'
 
 export default {
   components: {
-    vHeader
+    vHeader,
+    vSectionContent,
+    listCard,
+    breadCrumbs,
+    vFooter
   }
 }
 </script>
@@ -16,27 +37,19 @@ export default {
 <style lang="scss">
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  width: 100%;
+}
+.other__blogs {
+  margin: 0 auto;
+  widows: 100%;
+  max-width: 1110px;
+}
+.other__blogs__list {
+  margin: 0 -30px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  .title {
-    height: 200px;
-    color: $light;
-  }
+  flex-wrap: wrap;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.other__blogs__title {
+  margin-bottom: 24px;
 }
 </style>

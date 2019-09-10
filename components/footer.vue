@@ -60,7 +60,7 @@
 
 <style lang="scss">
 footer {
-  border: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
 }
 .footer__component__top__bar {
   padding: 24px 0;
@@ -150,7 +150,7 @@ footer {
   padding: 20px 400px 32px;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
   align-items: center;
   justify-content: space-between;
   color: $neutral;
