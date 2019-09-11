@@ -1,3 +1,4 @@
+@import './mixins';
 body {
     color: $dark;
     font-family: Helvetica;
@@ -36,4 +37,24 @@ h3 {
 
 .author__txt {
     font-weight: bold;
+}
+
+// ===media lg==
+h2 {
+    @include lg {
+        font-size: 30px;
+    }
+}
+
+// ===media md ===
+h2 {
+    @include md {
+        font-size: $fontSize3;
+    }
+}
+
+h3 {
+    @include md {
+        font-size: $fontSize2;
+    }
 }
