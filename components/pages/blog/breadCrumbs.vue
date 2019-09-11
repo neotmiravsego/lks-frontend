@@ -10,4 +10,17 @@
   width: 100%;
   margin-bottom: 24px;
 }
+// ===media==
+.breadCrumbs {
+  @include lg {
+    max-width: 700px;
+  }
+}
+// ==media md ===
+.breadCrumbs {
+  @include md {
+    max-width: 320px;
+    padding: 0 0 0 40px;
+  }
+}
 </style>

@@ -120,4 +120,89 @@
   height: 100%;
   background: orange;
 }
+// ===media==
+.header__component {
+  @include lg {
+    padding: 40px 20px 0;
+  }
+}
+.header__social__list__item {
+  @include lg {
+    margin-right: 20px;
+  }
+}
+.navigation__list__item {
+  @include lg {
+    margin-right: 20px;
+  }
+}
+.navigation__list__item__link {
+  @include lg {
+    font-size: 12px;
+  }
+}
+.header__controls__list__item {
+  @include lg {
+    margin-right: 25px;
+  }
+}
+// ===media md===
+.navigation__list {
+  @include md {
+    flex-wrap: wrap;
+  }
+}
+.header__button__lang {
+  @include md {
+    height: 25px;
+    width: 25px;
+  }
+}
+.header__title {
+  @include md {
+    font-size: $fontSize5;
+  }
+}
+.header__title__wrap {
+  @include md {
+    margin-bottom: 20px;
+  }
+}
+.header__socials {
+  @include md {
+    margin-bottom: 20px;
+  }
+}
+.header__socials__list {
+  @include md {
+    justify-content: center;
+  }
+}
+.header__social__list__item {
+  @include md {
+    margin-right: 10px;
+  }
+}
+.header__bottom__bar {
+  @include md {
+    display: block;
+  }
+}
+.navigation__list {
+  @include md {
+    margin-bottom: 20px;
+    font-size: 12px;
+    justify-content: center;
+  }
+}
+.navigation__list__item {
+  @include md {
+    margin-right: 10px;
+  }
+}
+.header__controls__list {
+  @include md {
+    justify-content: center;
+  }
+}
 </style>

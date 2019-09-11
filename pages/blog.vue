@@ -22,6 +22,7 @@ import vSectionContent from '~/components/sectionContent.vue'
 import listCard from '~/components/pages/blog/listCard.vue'
 import breadCrumbs from '~/components/pages/blog/breadCrumbs.vue'
 import vFooter from '~/components/footer.vue'
+import '../assets/scss/mixins.scss'
 
 export default {
   components: {
@@ -41,7 +42,7 @@ export default {
 }
 .other__blogs {
   margin: 0 auto;
-  widows: 100%;
+  width: 100%;
   max-width: 1110px;
 }
 .other__blogs__list {
@@ -51,5 +52,37 @@ export default {
 }
 .other__blogs__title {
   margin-bottom: 24px;
+}
+// ===media lg==
+.other__blog__list {
+  @include lg {
+    margin: 0 -25px;
+  }
+}
+.other__blogs {
+  @include lg {
+    max-width: 700px;
+  }
+}
+.other__blogs__title {
+  @include lg {
+    text-align: center;
+  }
+}
+// ===media md==
+.other__blogs__list {
+  @include md {
+    margin: 0;
+  }
+}
+.other__blogs {
+  @include md {
+    max-width: 320px;
+  }
+}
+.other__blogs__title {
+  @include md {
+    text-align: center;
+  }
 }
 </style>

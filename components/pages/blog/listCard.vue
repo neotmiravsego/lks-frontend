@@ -8,8 +8,8 @@
           .other__blog__card__txt__wrap
             p.other__blog__card__title White shark monkeyface prickleback bluefish kuhli loach; large-e
             p.other__blog__card__txt__wrap
-            | Сайт рыбатекст поможет дизайнеру, верстальщику,
-            | вебмастеру сгенерировать несколько абзацев более менее осмысленного текста 
+              | Сайт рыбатекст поможет дизайнеру, верстальщику,
+              | вебмастеру сгенерировать несколько абзацев более менее осмысленного текста 
 </template>
 
 <style lang="scss" scoped>
@@ -39,5 +39,35 @@
 .other__blog__card__title {
   margin-bottom: 16px;
   font-weight: bold;
+}
+// ===media lg==
+.other__blog__card__item {
+  @include lg {
+    margin-bottom: 80px;
+    width: 50%;
+    padding: 0 25px;
+  }
+}
+// ===media md===
+.other__blog__card__item {
+  @include md {
+    width: 100%;
+    padding: 0;
+  }
+}
+.other__blog__card__title {
+  @include md {
+    font-size: $fontSize2;
+  }
+}
+.other__blog__card__txt__wrap {
+  @include md {
+    font-size: $fontSize1;
+  }
+}
+.other__blog__card__item {
+  @include md {
+    margin-bottom: 60px;
+  }
 }
 </style>

@@ -48,14 +48,12 @@
             li.footer__social__list__item
               a(href="#").footer__social__item__link
                 img(src="../assets/images/svg/prsFooter.svg", alt="alt")
-      .footer__component__bottom__bar__wrap
-        .footer__component__bottom__bar
-          .copyright__wrap Little Knits Story 2017 | All Rights Reserved
-          .footer__logo
-            img(src="../assets/images/logo_footer.png", alt="alt").footer__logo__img
-          .privacy__policy
-            a(href="#").privacy__policy__link Политика конфеденциальности
-
+      .footer__component__bottom__bar
+        .copyright__wrap Little Knits Story 2017 | All Rights Reserved
+        .footer__logo
+          img(src="../assets/images/logo_footer.png", alt="alt").footer__logo__img
+        .privacy__policy
+          a(href="#").privacy__policy__link Политика конфеденциальности
 </template>
 
 <style lang="scss">
@@ -90,7 +88,7 @@ footer {
   background: #f0f0f0;
 }
 .footer__panel__navigation__title {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .footer__panel__navigation__list {
   display: flex;
@@ -157,5 +155,127 @@ footer {
 }
 .privacy__policy__link {
   color: $neutral;
+}
+// ==media==
+.footer__component__top__bar {
+  @include lg {
+    max-width: 700px;
+  }
+}
+.footer__component__bottom__bar {
+  @include lg {
+    padding: 20px 50px 32px;
+    max-width: 768px;
+    width: 100%;
+  }
+}
+.footer__panel__navigation__item {
+  @include lg {
+    padding-right: 20px;
+  }
+}
+.footer__panel__navigation__link {
+  @include lg {
+    margin-bottom: 10px;
+    font-size: $fontSize1;
+  }
+}
+.footer__panel__navigation__list {
+  @include lg {
+    display: block;
+    text-align: center;
+  }
+}
+.footer__panel__navigation__item {
+  @include lg {
+    padding: 0;
+  }
+}
+.footer__panel__controls__list {
+  @include lg {
+    display: block;
+    text-align: center;
+  }
+}
+.footer__panel__controls__item {
+  @include lg {
+    padding: 0;
+  }
+}
+.footer__panel__controls__link {
+  @include lg {
+    margin-bottom: 10px;
+    font-size: $fontSize1;
+  }
+}
+.footer__panel {
+  @include lg {
+    padding: 0 150px;
+  }
+}
+// ===media md====
+.footer__component__top__bar {
+  @include md {
+    max-width: 320px;
+  }
+}
+.footer__panel {
+  @include md {
+    padding: 0 10px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+.footer__panel__navigation__list {
+  @include md {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.footer__panel__controls__wrap {
+  @include md {
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+.footer__panel__controls__item {
+  @include md {
+    padding-right: 10px;
+    font-size: $fontSize1;
+  }
+}
+.footer__component__bottom__bar {
+  @include md {
+    flex-direction: column;
+    padding: 20px 20px 32px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.footer__panel__navigation__item {
+  @include md {
+    padding-right: 10px;
+    font-size: $fontSize1;
+  }
+}
+.footer__panel__navigation__wrap {
+  @include md {
+    margin-bottom: 20px;
+  }
+}
+.footer__button {
+  @include md {
+    padding: 6px 20px;
+  }
+}
+.copyright__wrap {
+  @include md {
+    margin-bottom: 5px;
+  }
+}
+.footer__logo {
+  @include md {
+    margin-bottom: 5px;
+  }
 }
 </style>
