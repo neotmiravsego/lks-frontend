@@ -16,3 +16,9 @@
         @content;
     }
 }
+
+@mixin xs {
+    @media screen and (min-width: $md) and (max-width: $xs - 1) {
+        @content;
+    }
+}
