@@ -1,7 +1,7 @@
 @import './mixins';
 body {
     color: $dark;
-    font-family: Helvetica;
+    font-family: $ffHelv;
     background: #fff;
 }
 
@@ -16,6 +16,7 @@ ul {
 }
 
 a {
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -32,7 +33,8 @@ h2 {
 h3 {
     margin: 0;
     font-size: 24px;
-    font-weight: 500px;
+    font-weight: bold;
+    font-family: $ffHelv;
 }
 
 .author__txt {
@@ -44,6 +46,10 @@ h2 {
     @include lg {
         font-size: 30px;
     }
+}
+
+button {
+    padding: 0;
 }
 
 // ===media md ===
