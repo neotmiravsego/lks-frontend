@@ -30,7 +30,7 @@
             placeholder='Ваш E-mail'
             )
           button.footer__button Подписаться
-          .footer__form__txt__wrap
+        .footer__informations__txt__wrap
             p.footer__form__txt
               | Мы проводим специальные акции для наших клиентов.
               | оформите подписку и мы будем держать вас в курсе
@@ -96,9 +96,6 @@ footer {
 .footer__panel__navigation__item {
   padding-right: 40px;
 }
-.footer__panel__navigation__item:last-child {
-  padding-right: 0;
-}
 .footer__panel__controls__list {
   display: flex;
 }
@@ -125,7 +122,7 @@ footer {
   color: #fff;
   font-size: $fontSize2;
 }
-.footer__form__txt__wrap {
+.footer__informations__txt__wrap {
   margin: 0 auto;
   margin-bottom: 24px;
   width: 100%;
@@ -165,7 +162,6 @@ footer {
 .footer__component__bottom__bar {
   @include lg {
     padding: 20px 50px 32px;
-    max-width: 768px;
     width: 100%;
   }
 }
@@ -216,7 +212,7 @@ footer {
 // ===media md====
 .footer__component__top__bar {
   @include md {
-    max-width: 320px;
+    padding: 24px 10px;
   }
 }
 .footer__panel {
@@ -224,12 +220,14 @@ footer {
     padding: 0 10px;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: center;
   }
 }
 .footer__panel__navigation__list {
   @include md {
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 -20px;
   }
 }
 .footer__panel__controls__wrap {
@@ -254,7 +252,8 @@ footer {
 }
 .footer__panel__navigation__item {
   @include md {
-    padding-right: 10px;
+    margin-bottom: 10px;
+    padding: 0 20px;
     font-size: $fontSize1;
   }
 }

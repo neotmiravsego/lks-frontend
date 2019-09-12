@@ -3,11 +3,11 @@
     .section__content
       .section__content__title__wrap
         h2.section___content__title White shark monkeyface prickleback bluefish kuhli loach; large-e
-      .content__data__author
-        p.content__data
-          span.content__data__time 13 ноября 2018 г.<br> 17:56
-        p.content__author <span class="author__txt">Автор:</span> Катя Анаприенко
       .blog__author
+        .content__data__author
+          p.content__data
+           span.content__data__time 13 ноября 2018 г.<br> 17:56
+          p.content__author <span class="author__txt">Автор:</span> Катя Анаприенко
         .blog__author__txt__wrap
           p.blog__author__txt
             | Таким образом постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке существенных финансовых и административных условий.
@@ -50,79 +50,67 @@
   .section__content {
     margin: 0 auto;
     width: 100%;
-    max-width: 825px;
+    max-width: $widthContainer2;
   }
   .blog__author__txt__wrap {
+    padding: 0 50px;
     margin-bottom: 40px;
     width: 100%;
-    max-width: 710px;
     text-align: justify;
   }
-  .content__data__time {
-    color: #c4c4c4;
-  }
   .content__data {
+    color: $neutral;
     margin-bottom: 15px;
   }
   .section__content__title__wrap {
-    padding-bottom: 16px;
+    padding: 0 40px;
+    margin-bottom: 16px;
     width: 100%;
-    max-width: 645px;
-    margin: 0 auto;
     text-align: center;
-  }
-  .section___content__title {
     line-height: 50px;
   }
   .blog__author {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     font-size: $fontSize4;
-  }
-  .blog__author__txt {
-    line-height: 40px;
-  }
-  .blog__author__img {
-    width: 100%;
-  }
-  .blog__author__img__wrap {
-    width: 100%;
-    margin-bottom: 24px;
+    &__txt {
+      line-height: 40px;
+      font-family: $ffHelv;
+    }
+    &__img__wrap {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    &__img {
+      width: 100%;
+    }
+    &__top__txt {
+      margin-bottom: 50px;
+    }
+    &__comment {
+      margin-bottom: 16px;
+      width: 100%;
+      text-align: left;
+    }
   }
   .author__img__bottom__wrap {
     margin-bottom: 12px;
   }
-  .blog__author__top__txt {
-    margin-bottom: 50px;
-  }
   .content__data__author {
+    margin-left: 56px;
     margin-bottom: 24px;
-    margin-left: 60px;
     line-height: 24px;
   }
-  .blog__author__comment {
-    margin-bottom: 16px;
-    width: 100%;
-    text-align: left;
-  }
   .other__blogs__author__title {
-    margin-bottom: 25px;
+    margin-bottom: 16px;
     line-height: 40px;
-  }
-  .other__blogs__author {
-    margin-bottom: 25px;
   }
   // ==media lg===
   .section__content {
     @include lg {
       padding: 0 50px;
-    }
-  }
-  .section___content__title {
-    @include lg {
-      line-height: 40px;
+      &__title {
+        line-height: 40px;
+      }
     }
   }
   .content__data__author {
@@ -149,8 +137,10 @@
   // ===media md===
   .section__content {
     @include md {
-      max-width: 320px;
-      padding: 0 8px;
+      padding: 0 40px;
+    }
+    @include xs {
+      padding: 0 10px;
     }
   }
   .section___content__title {
@@ -160,13 +150,21 @@
   }
   .content__data__author {
     @include md {
-      margin: 0 0 20px 20px;
+      margin: 0 0 20px;
+      font-size: $fontSize1;
+      line-height: 20px;
+      .content__data {
+        margin-bottom: 0;
+      }
     }
   }
   .blog__author__txt {
     @include md {
       font-size: $fontSize1;
       line-height: 25px;
+      &__wrap {
+        padding: 0;
+      }
     }
   }
   .blog__author__comment {

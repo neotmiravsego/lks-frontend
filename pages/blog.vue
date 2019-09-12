@@ -46,7 +46,7 @@ export default {
   max-width: 1110px;
 }
 .other__blogs__list {
-  margin: 0 -30px;
+  margin: 0 -15px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -73,6 +73,7 @@ export default {
 .other__blogs__list {
   @include md {
     margin: 0;
+    padding: 0 10px;
   }
 }
 .other__blogs {

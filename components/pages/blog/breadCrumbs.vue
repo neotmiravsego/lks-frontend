@@ -6,21 +6,20 @@
 <style lang="scss">
 .breadCrumbs {
   margin: 0 auto;
-  max-width: 1110px;
+  max-width: $widthContainer1;
   width: 100%;
   margin-bottom: 24px;
+  @include lg {
+    padding: 0 40px;
+  }
+  @include md {
+    padding: 0 40px;
+  }
+  @include xs {
+    padding: 0 10px;
+  }
 }
 // ===media==
-.breadCrumbs {
-  @include lg {
-    max-width: 700px;
-  }
-}
+// ==== media xs===
 // ==media md ===
-.breadCrumbs {
-  @include md {
-    max-width: 320px;
-    padding: 0 0 0 40px;
-  }
-}
 </style>
