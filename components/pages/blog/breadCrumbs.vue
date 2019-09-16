@@ -3,7 +3,7 @@
       p.crumbs Главная / Блог
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .breadCrumbs {
   margin: 0 auto;
   max-width: $widthContainer1;
