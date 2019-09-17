@@ -13,7 +13,7 @@
         listCard
         listCard
     vFooter
-
+    
 </template>
 
 <script>
