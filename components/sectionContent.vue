@@ -76,13 +76,13 @@
     max-width: $widthContainer2;
     &_title {
       @include md {
-        line-height: 20px;
+        line-height: $lineHeight1;
       }
     }
     @include lg {
       padding: 0 50px;
       &__title {
-        line-height: 40px;
+        line-height: $lineHeight3;
       }
     }
     @include md {
@@ -121,7 +121,7 @@
     @include md {
       margin: 0 0 10px;
       font-size: $fontSize1;
-      line-height: 20px;
+      line-height: $lineHeight1;
     }
   }
   .section__content__title__wrap {
@@ -129,16 +129,16 @@
     margin-bottom: 16px;
     width: 100%;
     text-align: center;
-    line-height: 50px;
+    line-height: $lineHeight4;
     @include md {
-      line-height: 20px;
+      line-height: $lineHeight1;
     }
   }
   .blog__author {
     position: relative;
     font-size: $fontSize4;
     &__txt {
-      line-height: 40px;
+      line-height: $lineHeight3;
       font-family: $ffHelv;
       @include lg {
         padding: 0 20px;
@@ -146,7 +146,7 @@
       }
       @include md {
         font-size: $fontSize1;
-        line-height: 25px;
+        line-height: $lineHeight2;
         &__wrap {
           padding: 0;
         }
@@ -182,9 +182,9 @@
   }
   .other__blogs__author__title {
     margin-bottom: 16px;
-    line-height: 40px;
+    line-height: $lineHeight3;
     @include md {
-      line-height: 25px;
+      line-height: $lineHeight2;
     }
   }
 }

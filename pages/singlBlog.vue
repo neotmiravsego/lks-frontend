@@ -6,12 +6,12 @@
     section.other__blogs
       h3.other__blogs__title Другие блоги
       ul.other__blogs__list
-        listCard
-        listCard
-        listCard
-        listCard
-        listCard
-        listCard
+        listCard.other__blogs__list__card
+        listCard.other__blogs__list__card
+        listCard.other__blogs__list__card
+        listCard.other__blogs__list__card
+        listCard.other__blogs__list__card
+        listCard.other__blogs__list__card
     vFooter
     
 </template>
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
   width: 100%;
@@ -54,6 +54,11 @@ export default {
     margin: 0 -15px;
     display: flex;
     flex-wrap: wrap;
+    &__card {
+      width: 33.33%;
+      padding: 0 15px;
+      margin-bottom: 32px;
+    }
     @include lg {
       margin: 0 -25px;
     }

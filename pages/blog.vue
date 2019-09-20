@@ -5,12 +5,12 @@
     .blog__container
       vSlider
       ul.blog__list
-        listCard.card__blog__list
-        listCard.card__blog__list
-        listCard.card__blog__list
-        listCard.card__blog__list
-        listCard.card__blog__list
-        listCard.card__blog__list
+        listCard.blog__list__card
+        listCard.blog__list__card
+        listCard.blog__list__card
+        listCard.blog__list__card
+        listCard.blog__list__card
+        listCard.blog__list__card
     vFooter
 </template>
 
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container__blog {
   .blog__container {
     width: 100%;
@@ -45,15 +45,10 @@ export default {
     display: flex;
     flex-wrap: wrap;
   }
-  .other__blog__card__item {
+  .blog__list__card {
     width: 33.3%;
     border-radius: 10px;
-    &:hover {
-      box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.15);
-      .card__button {
-        display: block;
-      }
-    }
+    padding: 0 15px;
   }
 }
 </style>
