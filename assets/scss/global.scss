@@ -2,7 +2,7 @@
 body {
     color: $dark;
     font-family: $ffHelv;
-    background: #fff;
+    background: $white;
 }
 
 a {
@@ -23,6 +23,8 @@ a {
 button {
     outline: none;
     border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
 h2 {
@@ -46,10 +48,6 @@ h2 {
     @include lg {
         font-size: 30px;
     }
-}
-
-button {
-    padding: 0;
 }
 
 // ===media md ===

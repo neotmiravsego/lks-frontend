@@ -1,4 +1,5 @@
 // fonts
+$fontSizesm: 12px;
 $fontSize1: 14px;
 $fontSize2: 16px;
 $fontSize3: 18px;
@@ -11,6 +12,7 @@ $dark: #545353;
 $light: #e5e5e5;
 $neutral: #c4c4c4;
 $pink: #e0c0c3;
+$white: #fff;
 // breakpoints
 $xl: 1200px;
 $lg: 768px;
@@ -19,3 +21,8 @@ $md: 320px;
 // ==width==
 $widthContainer1: 1110px;
 $widthContainer2: 825px;
+// ==line==
+$lineHeight1: 20px;
+$lineHeight2: 25px;
+$lineHeight3: 40px;
+$lineHeight4: 50px;
