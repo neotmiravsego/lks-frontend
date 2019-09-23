@@ -1,6 +1,5 @@
 <template lang="pug">
   .slider
-    p {{news}}
     .slider__wrap(ref="sliderWrap")
       ul.slider__line(ref="sliderLine")
         li.slider__line__item(v-for="item of news")
