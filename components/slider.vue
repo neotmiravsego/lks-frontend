@@ -1,21 +1,10 @@
 <template lang="pug">
   .slider
+    p {{news}}
     .slider__wrap(ref="sliderWrap")
       ul.slider__line(ref="sliderLine")
-        li.slider__line__item
-          SliderBlock.slide
-        li.slider__line__item
-          SliderBlock.slide
-        li.slider__line__item
-          SliderBlock.slide
-        li.slider__line__item
-          SliderBlock.slide
-        li.slider__line__item
-          SliderBlock.slide
-        li.slider__line__item
-          SliderBlock.slide
-        li.slider__line__item
-          SliderBlock.slide
+        li.slider__line__item(v-for="item of news")
+          SliderBlock.slide(:slideData="item")
     .slider__controls__panel
       ul.slider__controls__list
         li.slider__controls__list__item
@@ -49,16 +38,37 @@ export default {
   },
   data () {
     return {
-      offset: 0
+      offset: 0,
+      news: []
     }
   },
+  // такуюже offset = x
   mounted() {
     this.createSlider()
+    window.addEventListener('resize', this.resize)
+    this.getData()
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resize)
   },
   methods: {
+    getData() {
+      fetch('http://dev.backend.littleknitsstory.com/api/posts/',{
+        method: 'GET'
+      }).then((response) => {
+              /* eslint-disable */
+        return response.json()
+      }).then((json) => {
+        this.news=json
+        this.createSlider()
+      })
+    },
+    // вынести в блоg
+    //создать data
     createSlider () {
       const { prev, next, sliderLine, sliderWrap } = this.$refs
       const lineWidth = sliderWrap.offsetWidth + 40;
+      const slidesCount = this.news.length - 1;
       let { offset } = this
 
       function prevHandler() {
@@ -69,7 +79,8 @@ export default {
       }
 
       function nextHandler() {
-        if (offset < -6660) {
+        console.log(lineWidth)
+        if (offset <= -(slidesCount*lineWidth)) {
             return;
         }
         offset = offset - lineWidth;
@@ -78,6 +89,10 @@ export default {
 
       prev.onclick = prevHandler
       next.onclick = nextHandler
+    },
+    resize(){
+      /* eslint-disable */
+       this.createSlider();
     }
   }
 }

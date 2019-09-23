@@ -4,16 +4,26 @@
       img(src="../../../assets/images/blogslider.png",).slider__img
     .slider__blog__content
       .slider__blog__title__wrap
-        h2.slider__blog__title White shark monkeyface prickleback bluefish kuhli loach; large-e
+        h2.slider__blog__title {{slideData.title}}
       .slider__blog__txt__wrap
-        p.slider__blog__txt__data 13 ноября 2018 г.<br>
-         <span class="slider__data__time">17:56</span>
-        p.slider__blog__txt 
-          | Сайт рыбатекст поможет дизайнеру, верстальщику,
-          | вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке,
-          | а начинающему оратору отточить навык публичных выступлений в домашних условиях.
-        p.slider__blog__author <span class="slider__author__txt">Автор:</span> Катя Анаприенко
+        p.slider__blog__txt__data {{slideData.created_at}}<br>
+         <span class="slider__data__time">{{time}}</span>
+        p.slider__blog__txt(v-html="slideData.content")
+        p.slider__blog__author(v-if="slideData.author") <span class="slider__author__txt">Автор:</span> {{slideData.author}}
 </template>
+
+<script>
+export default {
+  props: {
+    slideData: {}
+  },
+  data() {
+    return {
+      time: '17:56'
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 .slider__blog {
   display: flex;
@@ -41,8 +51,10 @@
     .slider__blog__txt__wrap {
       width: 100%;
       font-size: $fontSize4;
-      text-align: justify;
       line-height: 28px;
+      text-align: justify;
+      max-height: 270px;
+      overflow: hidden;
       .slider__blog__txt {
         margin-bottom: 17px;
       }
