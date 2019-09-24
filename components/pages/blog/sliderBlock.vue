@@ -19,11 +19,24 @@ export default {
   },
   data() {
     return {
-      time: '17:56'
+      time: '17:56',
+      news: []
+    }
+  },
+  methods: {
+    getData() {
+     fetch('http://dev.backend.littleknitsstory.com/api/posts/',{
+        method: 'GET'
+      }).then((response => {
+/* eslint-disable */
+        return response.json()
+      }).then((json) => {
+        this.news=json
+      })
     }
   }
-}
 </script>
+
 <style lang="scss" scoped>
 .slider__blog {
   display: flex;
