@@ -15,11 +15,15 @@
 
 <style lang="scss" scoped>
 .other__blog__card__item {
-  &:hover {
-    box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    .card__button {
-      opacity: 1;
+  margin-bottom: 32px;
+  .other__blog__card__link {
+    display: block;
+    &:hover {
+      box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      .card__button {
+        opacity: 1;
+      }
     }
   }
   @include lg {
