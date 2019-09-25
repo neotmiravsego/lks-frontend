@@ -5,6 +5,12 @@
     }
 }
 
+@mixin avg {
+    @media screen and (max-width: $avg) {
+        @content;
+    }
+}
+
 @mixin lg {
     @media screen and (min-width: $lg) and (max-width: $xl - 1) {
         @content;

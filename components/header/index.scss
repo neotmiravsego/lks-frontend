@@ -17,7 +17,7 @@
         &__bg__img {
             position: absolute;
             right: 300px;
-            @include xl {
+            @include xs {
                 right: 100px;
                 top: 20px;
             }
