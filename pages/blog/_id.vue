@@ -2,7 +2,7 @@
   .container
     vHeader
     breadCrumbs
-    vSectionContent
+    vSectionContent(:newsData="newsData")
     section.other__blogs
       h3.other__blogs__title Другие блоги
       ul.other__blogs__list
@@ -22,7 +22,6 @@ import vSectionContent from '~/components/sectionContent.vue'
 import listCard from '~/components/pages/blog/listCard.vue'
 import breadCrumbs from '~/components/pages/blog/breadCrumbs.vue'
 import vFooter from '~/components/footer/index.vue'
-import '../assets/scss/mixins.scss'
 
 export default {
   components: {
@@ -31,6 +30,28 @@ export default {
     listCard,
     breadCrumbs,
     vFooter
+  },
+  data() {
+    return {
+      newsData: {}
+    }
+  },
+  mounted() {
+    this.getData()
+  },
+  methods: {
+    getData() {
+      const { id } = this.$route.params
+      fetch(`http://dev.backend.littleknitsstory.com/api/posts/${id}`, {
+        method: 'GET'
+      })
+        .then(response => {
+          return response.json()
+        })
+        .then(json => {
+          this.news = json
+        })
+    }
   }
 }
 </script>

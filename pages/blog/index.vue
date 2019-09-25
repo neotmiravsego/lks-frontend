@@ -20,7 +20,6 @@ import listCard from '~/components/pages/blog/listCard.vue'
 import breadCrumbs from '~/components/pages/blog/breadCrumbs.vue'
 import vFooter from '~/components/footer/index.vue'
 import vSlider from '~/components/slider.vue'
-import '../assets/scss/mixins.scss'
 
 export default {
   components: {
