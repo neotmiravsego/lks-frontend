@@ -47,6 +47,20 @@
             | Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности позволяет оценить значение позиций, занимаемых участниками в отношении поставленных задач.
 </template>
 
+<script>
+export default {
+  props: {
+    // TODO: Здесь приходит объект с данными, по этой ссылку приходит
+    // http://dev.backend.littleknitsstory.com/api/posts/1/ вот тут пример этого объекта
+    // вместо картинок и текста вставить просто v-html newsData.content
+    newsData: {
+      default: () => {},
+      type: Object
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .section__content__component {
   position: relative;
