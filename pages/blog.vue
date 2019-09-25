@@ -5,12 +5,7 @@
     .blog__container
       vSlider
       ul.blog__list
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
+        listCard.blog__list__card(v-for="item of news" :key="item.id" :cardData="item")
     vFooter
 </template>
 
@@ -21,6 +16,7 @@ import breadCrumbs from '~/components/pages/blog/breadCrumbs.vue'
 import vFooter from '~/components/footer/index.vue'
 import vSlider from '~/components/slider.vue'
 import '../assets/scss/mixins.scss'
+import '../components/sectionContent.vue'
 
 export default {
   components: {
@@ -29,6 +25,29 @@ export default {
     breadCrumbs,
     vFooter,
     vSlider
+  },
+  data() {
+    return {
+      news: []
+    }
+  },
+  mounted() {
+    this.getData()
+  /* eslint-disable */
+    console.log(1)
+  },
+  methods: {
+    getData() {
+      fetch('http://dev.backend.littleknitsstory.com/api/posts/', {
+        method: 'GET'
+      })
+        .then(response => {
+          return response.json()
+        })
+        .then(json => {
+          this.news = json
+        })
+    }
   }
 }
 </script>

@@ -50,25 +50,6 @@
 <style lang="scss" scoped>
 .section__content__component {
   position: relative;
-  .content__bg__img__right {
-    position: absolute;
-    right: 328px;
-    @include lg {
-      right: 0;
-    }
-    @include md {
-      right: 50px;
-    }
-  }
-  .content__bg__img__left {
-    position: absolute;
-    left: 326px;
-    top: 300px;
-    @include md {
-      left: 50px;
-      top: 600px;
-    }
-  }
   .section__content {
     position: relative;
     margin: 0 auto;

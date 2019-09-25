@@ -19,21 +19,7 @@ export default {
   },
   data() {
     return {
-      time: '17:56',
-      news: []
-    }
-  },
-  methods: {
-    getData() {
-      fetch('http://dev.backend.littleknitsstory.com/api/posts/', {
-        method: 'GET'
-      })
-        .then(response => {
-          return response.json()
-        })
-        .then(json => {
-          this.news = json
-        })
+      time: '12:30'
     }
   }
 }
@@ -43,8 +29,14 @@ export default {
 .slider__blog {
   display: flex;
   color: black;
+  @include avg {
+    flex-direction: column;
+  }
   .slider__blog__img__wrap {
     margin-right: 58px;
+    @include avg {
+      margin: 0;
+    }
     .slider__img {
       display: block;
       object-fit: cover;
@@ -70,6 +62,9 @@ export default {
       text-align: justify;
       max-height: 270px;
       overflow: hidden;
+      @include avg {
+        font-size: $fontSize2;
+      }
       .slider__blog__txt {
         margin-bottom: 17px;
       }

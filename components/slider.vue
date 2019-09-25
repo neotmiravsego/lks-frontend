@@ -51,7 +51,7 @@ export default {
     window.removeEventListener('resize', this.resize)
   },
   methods: {
-    getData() {
+  getData() {
       fetch('http://dev.backend.littleknitsstory.com/api/posts/',{
         method: 'GET'
       }).then((response) => {

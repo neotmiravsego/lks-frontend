@@ -4,15 +4,20 @@
         .other__blog__card__content
           .other__blog__card__img__wrap
             img(src="../../../assets/images/otherBlogs.png", alt="alt").other__blog__card__img
-          p.other__blog__card__data 13 ноября 2018 г. 17:56
+          p.other__blog__card__data {{cardData.created_at}}
           .other__blog__card__txt__wrap
-            p.other__blog__card__title White shark monkeyface prickleback bluefish kuhli loach; large-e
-            p.other__blog__card__txt__wrap
-              | Сайт рыбатекст поможет дизайнеру, верстальщику,
-              | вебмастеру сгенерировать несколько абзацев более менее осмысленного текста 
+            p.other__blog__card__title {{cardData.title}}
+            p.other__blog__card__txt__wrap(v-html="cardData.content")
           button.card__button Читать
 </template>
 
+<script>
+export default {
+  props: {
+    cardData: {}
+  }
+}
+</script>
 <style lang="scss" scoped>
 .other__blog__card__item {
   margin-bottom: 32px;
@@ -54,6 +59,9 @@
     margin-bottom: 16px;
   }
   .other__blog__card__txt__wrap {
+    max-height: 287px;
+    overflow: hidden;
+    padding: 12px;
     margin-bottom: 24px;
     font-size: $fontSize3;
     line-height: 25px;
