@@ -3,9 +3,9 @@
     vHeader
     breadCrumbs
     .blog__container
-      slideBlock(v-if="news[0]" :slideData="news[0]")
+      slideBlock(v-if="firstNews" :slideData="firstNews")
       ul.blog__list
-        listCard.blog__list__card(v-for="item of news" :key="item.id")
+        listCard.blog__list__card(v-for="item of news" :key="item.id" :cardData="item")
     vFooter
 </template>
 
@@ -29,7 +29,8 @@ export default {
 
   data() {
     return {
-      news: []
+      news: [],
+      firstNews: {}
     }
   },
   mounted() {
@@ -44,7 +45,10 @@ export default {
           return response.json()
         })
         .then(json => {
-          this.news = json
+          this.firstNews = json[0]
+          this.news = json.filter(el => {
+            return json[0].id !== el.id
+          })
         })
     }
   }

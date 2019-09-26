@@ -1,25 +1,34 @@
   <template lang="pug">
     li.other__blog__card__item
-      a(href="#").other__blog__card__link
-        .other__blog__card__content
-          .other__blog__card__img__wrap
-            img(src="../../../assets/images/otherBlogs.png", alt="alt").other__blog__card__img
-          p.other__blog__card__data 13 ноября 2018 г. 17:56
-          .other__blog__card__txt__wrap
-            p.other__blog__card__title White shark monkeyface prickleback bluefish kuhli loach; large-e
-            p.other__blog__card__txt__wrap
-              | Сайт рыбатекст поможет дизайнеру, верстальщику,
-              | вебмастеру сгенерировать несколько абзацев более менее осмысленного текста 
-          button.card__button Читать
+      .other__blog__card__content
+        .other__blog__card__img__wrap
+          img(src="../../../assets/images/otherBlogs.png", alt="alt").other__blog__card__img
+        p.other__blog__card__data {{ cardData.created_at }}
+        .other__blog__card__txt__wrap
+          p.other__blog__card__title {{ cardData.title }}
+          p.other__blog__card__txt__wrap(v-html="cardData.content") 
+        .button__wrap
+          a.card__button(:href="cardData.id") Читать
 </template>
+
+<script>
+export default {
+  props: {
+    cardData: {}
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .other__blog__card__item {
   &:hover {
     box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    .card__button {
-      opacity: 1;
+    .button__wrap {
+      .card__button {
+        display: inline-block;
+        opacity: 1;
+      }
     }
   }
   @include lg {
@@ -27,18 +36,23 @@
     width: 50%;
     padding: 0 25px;
   }
-  .card__button {
-    padding: 11px 46px;
-    display: block;
-    background: #e0c0c3;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    font-size: $fontSize3;
-    margin: 0 auto;
-    color: $white;
-    letter-spacing: 1px;
-    font-family: Helvetica;
-    opacity: 0;
+  .button__wrap {
+    display: flex;
+    justify-content: center;
+
+    .card__button {
+      padding: 11px 46px;
+      display: block;
+      background: #e0c0c3;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      font-size: $fontSize3;
+      margin: 0 auto;
+      color: $white;
+      letter-spacing: 1px;
+      font-family: Helvetica;
+      opacity: 0;
+    }
   }
   .other__blog__card__content {
     padding-bottom: 16px;
@@ -50,10 +64,11 @@
     margin-bottom: 16px;
   }
   .other__blog__card__txt__wrap {
+    overflow: hidden;
+    max-height: 190px;
     margin-bottom: 24px;
     font-size: $fontSize3;
     line-height: 25px;
-    text-align: center;
     text-align: center;
     @include md {
       font-size: $fontSize1;

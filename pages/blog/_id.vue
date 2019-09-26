@@ -2,16 +2,11 @@
   .container
     vHeader
     breadCrumbs
-    vSectionContent
+    vSectionContent(v-if="newsData" :newsData="newsData")
     section.other__blogs
       h3.other__blogs__title Другие блоги
       ul.other__blogs__list
-        listCard.other__blogs__list__card
-        listCard.other__blogs__list__card
-        listCard.other__blogs__list__card
-        listCard.other__blogs__list__card
-        listCard.other__blogs__list__card
-        listCard.other__blogs__list__card
+        listCard.other__blogs__list__card(v-for="item of news" :key="item.id" :cardData="item")
     vFooter
     
 </template>
@@ -44,6 +39,8 @@ export default {
   methods: {
     getData() {
       const { id } = this.$route.params
+      // eslint-disable-next-line no-console
+      console.log(this.$route)
       fetch(`http://dev.backend.littleknitsstory.com/api/posts/${id}`, {
         method: 'GET'
       })
@@ -55,6 +52,8 @@ export default {
         })
     },
     getList() {
+      const { id } = this.$route.params
+
       fetch('http://dev.backend.littleknitsstory.com/api/posts/', {
         method: 'GET'
       })
@@ -62,7 +61,10 @@ export default {
           return response.json()
         })
         .then(json => {
-          this.news = json
+          const filteredJson = json.filter(el => {
+            return el.id !== Number(id)
+          })
+          this.news = filteredJson
         })
     }
   }
