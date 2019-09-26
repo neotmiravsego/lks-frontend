@@ -3,18 +3,14 @@
     vHeader
     breadCrumbs
     .blog__container
-      vSlider
+      slideBlock(v-if="news[0]" :slideData="news[0]")
       ul.blog__list
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
-        listCard.blog__list__card
+        listCard.blog__list__card(v-for="item of news" :key="item.id")
     vFooter
 </template>
 
 <script>
+import slideBlock from '../../components/pages/blog/sliderBlock.vue'
 import vHeader from '~/components/header/index.vue'
 import listCard from '~/components/pages/blog/listCard.vue'
 import breadCrumbs from '~/components/pages/blog/breadCrumbs.vue'
@@ -27,7 +23,30 @@ export default {
     listCard,
     breadCrumbs,
     vFooter,
-    vSlider
+    vSlider,
+    slideBlock
+  },
+
+  data() {
+    return {
+      news: []
+    }
+  },
+  mounted() {
+    this.getData()
+  },
+  methods: {
+    getData() {
+      fetch('http://dev.backend.littleknitsstory.com/api/posts/', {
+        method: 'GET'
+      })
+        .then(response => {
+          return response.json()
+        })
+        .then(json => {
+          this.news = json
+        })
+    }
   }
 }
 </script>

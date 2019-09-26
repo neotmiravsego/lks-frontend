@@ -19,21 +19,7 @@ export default {
   },
   data() {
     return {
-      time: '17:56',
-      news: []
-    }
-  },
-  methods: {
-    getData() {
-      fetch('http://dev.backend.littleknitsstory.com/api/posts/', {
-        method: 'GET'
-      })
-        .then(response => {
-          return response.json()
-        })
-        .then(json => {
-          this.news = json
-        })
+      time: '17:59'
     }
   }
 }

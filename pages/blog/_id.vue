@@ -2,7 +2,7 @@
   .container
     vHeader
     breadCrumbs
-    vSectionContent(:newsData="newsData")
+    vSectionContent
     section.other__blogs
       h3.other__blogs__title Другие блоги
       ul.other__blogs__list
@@ -33,16 +33,29 @@ export default {
   },
   data() {
     return {
-      newsData: {}
+      newsData: {},
+      news: []
     }
   },
   mounted() {
     this.getData()
+    this.getList()
   },
   methods: {
     getData() {
       const { id } = this.$route.params
       fetch(`http://dev.backend.littleknitsstory.com/api/posts/${id}`, {
+        method: 'GET'
+      })
+        .then(response => {
+          return response.json()
+        })
+        .then(json => {
+          this.newsData = json
+        })
+    },
+    getList() {
+      fetch('http://dev.backend.littleknitsstory.com/api/posts/', {
         method: 'GET'
       })
         .then(response => {
