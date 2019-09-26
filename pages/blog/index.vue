@@ -6,6 +6,8 @@
       slideBlock(v-if="firstNews" :slideData="firstNews")
       ul.blog__list
         listCard.blog__list__card(v-for="item of news" :key="item.id" :cardData="item")
+      .button__watch__more__wrap
+        button.button__more Cмотреть ещё
     vFooter
 </template>
 
@@ -61,16 +63,35 @@ export default {
     width: 100%;
     max-width: $widthContainer1;
     margin: 0 auto;
+    padding: 0 20px;
   }
   .blog__list {
-    margin: 0 -15px;
+    margin: 0 -15px 82px;
     display: flex;
     flex-wrap: wrap;
+    @include md {
+      margin: 0;
+    }
   }
   .blog__list__card {
     width: 33.3%;
     border-radius: 10px;
     padding: 0 15px;
+    @include md {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .button__watch__more__wrap {
+    margin-bottom: 32px;
+    text-align: center;
+    .button__more {
+      color: $dark;
+      font-size: $fontSize3;
+      border: none;
+      outline: none;
+      background: transparent;
+    }
   }
 }
 </style>

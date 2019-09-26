@@ -22,19 +22,12 @@ export default {
 <style lang="scss" scoped>
 .other__blog__card__item {
   &:hover {
-    box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
     .button__wrap {
       .card__button {
         display: inline-block;
         opacity: 1;
       }
     }
-  }
-  @include lg {
-    margin-bottom: 80px;
-    width: 50%;
-    padding: 0 25px;
   }
   .button__wrap {
     display: flex;
@@ -56,6 +49,10 @@ export default {
   }
   .other__blog__card__content {
     padding-bottom: 16px;
+    &:hover {
+      box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+    }
   }
   .other__blog__card__img {
     width: 100%;
@@ -84,17 +81,6 @@ export default {
     font-weight: bold;
     @include md {
       font-size: $fontSize2;
-    }
-  }
-  // ===media lg==
-  .other__blog__card__item {
-    @include lg {
-      margin-bottom: 80px;
-      width: 50%;
-      padding: 0 25px;
-    }
-    @include md {
-      margin-bottom: 60px;
     }
   }
 }

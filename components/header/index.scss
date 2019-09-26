@@ -122,6 +122,7 @@
             display: flex;
             align-items: center;
             margin: 0 -20px;
+            justify-content: flex-end;
             @include md {
                 justify-content: center;
                 padding: 0 25px;
@@ -174,6 +175,8 @@
             width: 100%;
             height: 100%;
             background: #e0c0c3;
+            color: $white;
+            font-size: $fontSize3;
         }
     }
 }

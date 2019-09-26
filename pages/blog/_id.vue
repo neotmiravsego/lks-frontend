@@ -91,9 +91,11 @@ export default {
     display: flex;
     flex-wrap: wrap;
     &__card {
-      width: 33.33%;
       padding: 0 15px;
       margin-bottom: 32px;
+      @include md {
+        width: 100%;
+      }
     }
     @include lg {
       margin: 0 -25px;
