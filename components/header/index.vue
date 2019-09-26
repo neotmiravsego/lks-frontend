@@ -44,7 +44,7 @@
               a(href="#").header__controls__link
                 img.header__controls__img(src="../../assets/images/svg/heart-shape-outline.svg")
     .header__button__lang
-      button.header__button
+      button.header__button Ru
 </template>
 
 <style lang="scss" scoped src="./index.scss">
