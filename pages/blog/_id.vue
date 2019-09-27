@@ -83,7 +83,6 @@ export default {
       max-width: 700px;
     }
     @include md {
-      max-width: 320px;
     }
   }
   .other__blogs__list {
@@ -91,6 +90,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     &__card {
+      width: 33.33%;
       padding: 0 15px;
       margin-bottom: 32px;
       @include md {
