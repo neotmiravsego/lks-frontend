@@ -83,7 +83,6 @@ export default {
       font-size: $fontSize4;
       line-height: 28px;
       text-align: justify;
-      max-height: 350px;
       .slider__blog__txt {
         margin-bottom: 17px;
       }
