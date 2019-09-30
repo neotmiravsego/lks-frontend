@@ -18,6 +18,9 @@ ul {
 a {
     cursor: pointer;
     text-decoration: none;
+    &:hover {
+        color: #e0c0c3;
+    }
 }
 
 button {

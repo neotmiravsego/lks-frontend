@@ -3,7 +3,7 @@
     vHeader
     breadCrumbs
     .blog__container
-      slideBlock(v-if="firstNews" :slideData="firstNews")
+      slideBlock(v-if="firstNews" :slideData="firstNews" )
       ul.blog__list
         listCard.blog__list__card(v-for="item of news" :key="item.id" :cardData="item")
       .button__watch__more__wrap
