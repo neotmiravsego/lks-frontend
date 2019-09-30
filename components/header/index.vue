@@ -47,5 +47,8 @@
       button.header__button Ru
 </template>
 
+<script>
+</script>
+
 <style lang="scss" scoped src="./index.scss">
 </style>

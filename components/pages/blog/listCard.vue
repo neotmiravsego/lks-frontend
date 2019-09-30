@@ -8,7 +8,7 @@
           p.other__blog__card__title {{ cardData.title }}
           p.other__blog__card__txt__wrap(v-html="cardData.content") 
         .button__wrap
-          a.card__button(:href="`/blog/${cardData.id}`") Читать
+          nuxt-link.card__button(:to="`/blog/${cardData.id}`") Читать
 </template>
 
 <script>
