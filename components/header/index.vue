@@ -49,10 +49,27 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isFixed: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
   methods: {
     handleScroll() {
       /*  eslint-disable */
       const offsetY = window.scrollY
+      if (offsetY > 138) {
+        this.isFixed = true
+      }
+      else if (offsetY < 136) {
+        this.isFixed = false
+      }
     }
   }
 }
