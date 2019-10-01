@@ -1,6 +1,5 @@
 <template lang="pug">
   header.header__component(:class="{ header__component__fixed: isFixed }")
-    img(src="../../assets/images/HeaderBgImg.png", alt="alt").header__bg__img
     .header__wrap
       .header__title__wrap
         p.header__label Блог и магазин по вязанию
@@ -70,7 +69,7 @@ export default {
       else if (offsetY < 136) {
         this.isFixed = false
       }
-    }
+    } 
   }
 }
 </script>
