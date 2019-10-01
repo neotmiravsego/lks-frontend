@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header__component
+  header.header__component(:class="{ header__component__fixed: isFixed }")
     img(src="../../assets/images/HeaderBgImg.png", alt="alt").header__bg__img
     .header__wrap
       .header__title__wrap
@@ -48,6 +48,14 @@
 </template>
 
 <script>
+export default {
+  methods: {
+    handleScroll() {
+      /*  eslint-disable */
+      const offsetY = window.scrollY
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped src="./index.scss">
