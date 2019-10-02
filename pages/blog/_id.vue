@@ -1,5 +1,6 @@
 <template lang="pug">
   .container
+    img(src="../../assets/images/HeaderBgImg.png", alt="alt").bg__img__top
     vHeader
     breadCrumbs
     vSectionContent(v-if="newsData" :newsData="newsData")
@@ -73,8 +74,18 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  position: relative;
   margin: 0 auto;
   width: 100%;
+  .bg__img__top {
+    position: absolute;
+    right: 220px;
+    z-index: -1;
+    @include md {
+      top: 40px;
+      right: 50px;
+    }
+  }
   .other__blogs {
     margin: 0 auto;
     width: 100%;

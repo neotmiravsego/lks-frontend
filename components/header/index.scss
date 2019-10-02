@@ -1,6 +1,18 @@
 .header__component {
     position: relative;
     margin-bottom: 32px;
+    &__fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding-bottom: 20px;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+        .header__title__wrap {
+            display: none;
+        }
+    }
     @include lg {
         padding: 40px 20px 0;
     }
@@ -13,18 +25,6 @@
             max-width: $widthContainer1;
             text-align: center;
             font-size: $fontSize1;
-        }
-        &__bg__img {
-            position: absolute;
-            right: 300px;
-            @include xl {
-                right: 100px;
-                top: 20px;
-            }
-            @include md {
-                top: 40px;
-                right: 50px;
-            }
         }
         &__label {
             margin-bottom: 16px;

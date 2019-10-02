@@ -8,7 +8,7 @@
           p.other__blog__card__title {{ cardData.title }}
           p.other__blog__card__txt__wrap(v-html="cardData.content") 
         .button__wrap
-          a.card__button(:href="cardData.id") Читать
+          nuxt-link.card__button(:to="`/blog/${cardData.id}`") Читать
 </template>
 
 <script>
@@ -21,6 +21,9 @@ export default {
 
 <style lang="scss" scoped>
 .other__blog__card__item {
+  @include md {
+    margin-bottom: 40px;
+  }
   &:hover {
     .button__wrap {
       .card__button {
@@ -56,9 +59,17 @@ export default {
   }
   .other__blog__card__img {
     width: 100%;
+    @include md {
+      width: 70%;
+    }
   }
   .other__blog__card__img__wrap {
     margin-bottom: 16px;
+    @include md {
+      width: auto;
+      display: flex;
+      justify-content: center;
+    }
   }
   .other__blog__card__txt__wrap {
     overflow: hidden;
@@ -67,6 +78,7 @@ export default {
     font-size: $fontSize3;
     line-height: 25px;
     text-align: center;
+    padding: 0 12px;
     @include md {
       font-size: $fontSize1;
     }

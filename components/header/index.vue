@@ -1,6 +1,5 @@
 <template lang="pug">
-  header.header__component
-    img(src="../../assets/images/HeaderBgImg.png", alt="alt").header__bg__img
+  header.header__component(:class="{ header__component__fixed: isFixed }")
     .header__wrap
       .header__title__wrap
         p.header__label Блог и магазин по вязанию
@@ -46,6 +45,34 @@
     .header__button__lang
       button.header__button Ru
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isFixed: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      /*  eslint-disable */
+      const offsetY = window.scrollY
+      if (offsetY > 138) {
+        this.isFixed = true
+      }
+      else if (offsetY < 136) {
+        this.isFixed = false
+      }
+    } 
+  }
+}
+</script>
 
 <style lang="scss" scoped src="./index.scss">
 </style>

@@ -9,9 +9,9 @@
         p.slider__blog__txt__data {{slideData.created_at}}<br>
          <span class="slider__data__time">{{time}}</span>
         p.slider__blog__txt(v-html="slideData.content")
-        p.slider__blog__author(v-if="slideData.author") <span class="slider__author__txt">Автор:</span> {{slideData.author}}
+        p.slider__blog__author <span class="slider__author__txt">Автор:</span> {{author}}
       .button__slide__wrap
-        button.slide__button Читать
+        a.slide__button(:href="`/blog/${slideData.id}`") Читать
 </template>
 
 <script>
@@ -21,7 +21,8 @@ export default {
   },
   data() {
     return {
-      time: '17:59'
+      time: '17:59',
+      author: 'Катя Анаприенко'
     }
   }
 }
@@ -38,15 +39,16 @@ export default {
   }
   .slider__blog__img__wrap {
     margin-right: 58px;
+    display: flex;
+    justify-content: center;
     @include md {
-      margin-right: 0;
+      margin: 0;
     }
     .slider__img {
       display: block;
       object-fit: cover;
       @include md {
-        width: 100%;
-        height: 488px;
+        height: 300px;
       }
     }
   }
@@ -81,8 +83,6 @@ export default {
       font-size: $fontSize4;
       line-height: 28px;
       text-align: justify;
-      max-height: 270px;
-      overflow: hidden;
       .slider__blog__txt {
         margin-bottom: 17px;
       }
